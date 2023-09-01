@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 13:53:48 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/01 10:29:06 by jteste           ###   ########.fr       */
+/*   Created: 2023/08/31 13:02:14 by jteste            #+#    #+#             */
+/*   Updated: 2023/08/31 13:23:49 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void ft_putnbr(int n) {
+    if (n < 0) {
+        putchar('-');
+        n = -n;
+    }
 
-char	*ft_strlowcase(char *str)
-{
-	int	i;
+    if (n >= 10) {
+        putnbr(n / 10);
+    }
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] = str[i] + 32;
-		}
-		i++;
-	}
-	return (str);
+    putchar(n % 10 + '0');
 }
-/* #include <stdio.h>
-int main()
-{
-	char str[] = "BaTmAn Is Real";
-	printf("%s\n",ft_strlowcase(str));
-	return 0;
-}*/
+
+int main() {
+    int number = 12345;
+    putnbr(number);
+    putchar('\n');
+    return 0;
+}

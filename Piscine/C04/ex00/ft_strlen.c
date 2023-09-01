@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 15:17:09 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/01 09:33:57 by jteste           ###   ########.fr       */
+/*   Created: 2023/08/31 11:48:56 by jteste            #+#    #+#             */
+/*   Updated: 2023/08/31 11:57:50 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_strlen(char *str)
 {
-	int				i;
-	unsigned int	j;
+	int	i;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
-	while (j < nb && src[j] != '\0')
-	{
-		dest[i] = src[j];
-		j++;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
-
-/*
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
 {
-	char *src = " is real";
-	char dest[50] = "batman";
-	unsigned int nb = 10;
-	printf("%s\n", ft_strncat(dest, src, nb));
+	char str[]="okok";
+	printf("%d\n",ft_strlen(str));
 	return 0;
-}
-*/
+} */
