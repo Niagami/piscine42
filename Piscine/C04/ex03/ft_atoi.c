@@ -1,47 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 09:01:56 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/01 13:40:07 by jteste           ###   ########.fr       */
+/*   Created: 2023/09/02 10:48:00 by jteste            #+#    #+#             */
+/*   Updated: 2023/09/02 11:33:58 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_comb(void)
+int	ft_atoi(char *str)
 {
-	char	u;
-	char	d;
-	char	c;
+	int	i;
+	int	j;
+	int	sign;
 
-	c = '0';
-	while (c <= '7')
+	i = 0;
+	j = 0;
+	sign = 1;
+	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
+		i++;
+	if (str[i] == '-')
 	{
-		d = c + 1;
-		while (d <= '8')
-		{
-			u = d + 1;
-			while (u <= '9')
-			{
-				write(1, &c, 1);
-				write(1, &d, 1);
-				write(1, &u, 1);
-				if (c < '7')
-					write(1, ", ", 2)
-					u++;
-			}
-			d++;
-		}		
-		c++;
+		sign = -sign;
+		i++;
 	}
-}
-
-int main()
-{
-	ft_print_comb();
-	return 0;
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		j = j * 10 + (str[i] - '0');
+		i++;
+	}
+	return (j * sign);
 }
