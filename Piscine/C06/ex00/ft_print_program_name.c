@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:56:17 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/05 09:27:45 by jteste           ###   ########.fr       */
+/*   Updated: 2023/09/05 13:14:21 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -27,5 +27,6 @@ int	main(int argc, char *argv[])
 {
 	(void) argc;
 	ft_putstr(argv[0]);
+	write(1, "\n", 1);
 	return (0);
 }
