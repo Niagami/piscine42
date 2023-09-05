@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 11:56:17 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/05 09:27:45 by jteste           ###   ########.fr       */
+/*   Created: 2023/09/05 09:30:30 by jteste            #+#    #+#             */
+/*   Updated: 2023/09/05 09:43:55 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -25,7 +25,14 @@ void	ft_putstr(char *str)
 
 int	main(int argc, char *argv[])
 {
-	(void) argc;
-	ft_putstr(argv[0]);
+	int	i;
+
+	i = argc - 1;
+	while (i > 0)
+	{
+		ft_putstr(argv[i]);
+		write(1, "\n", 1);
+		i--;
+	}
 	return (0);
 }
