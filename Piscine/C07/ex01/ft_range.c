@@ -1,60 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 09:23:34 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/06 15:52:10 by jteste           ###   ########.fr       */
+/*   Created: 2023/09/06 13:52:23 by jteste            #+#    #+#             */
+/*   Updated: 2023/09/06 15:52:07 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	*ft_range(int min, int max)
 {
+	int	*tab;
 	int	i;
+	int	j;
 
 	i = 0;
-	while (str[i] != '\0')
+	j = max - min;
+	if (min >= max)
 	{
-		i ++;
-	}
-	return (i);
-}
-
-char	*ft_strcpy(char *src, char *dest)
-{
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i ++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		i;
-	char	*dest;
-
-	i = ft_strlen(src) + 1;
-	dest = malloc(sizeof(char) * i);
-	if (dest == NULL)
 		return (NULL);
-	return (ft_strcpy(src, dest));
+	}
+	tab = malloc(sizeof(int) * j);
+	if (tab == NULL)
+	{
+		return (NULL);
+	}
+	while (min < max)
+	{
+		tab[i] = min;
+		min ++;
+		i ++;
+	}
+	return (tab);
 }
 /*
 #include <stdio.h>
-int	main(void)
+int main(void)
 {
-	char *src = "batman is real";
-	
-	printf("%s\n", ft_strdup(src));
+	int i = 0;
+	int min = 10;
+	int max = 20;
+	int *resultat = ft_range(min,max);
+	while (i < max - min)
+	{
+		printf("%d\n",resultat[i]);
+		i++;
+	}
 	return 0;
 }
 */
