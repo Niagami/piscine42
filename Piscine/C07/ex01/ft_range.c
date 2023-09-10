@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:52:23 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/06 15:52:07 by jteste           ###   ########.fr       */
+/*   Updated: 2023/09/09 11:32:33 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -24,7 +24,7 @@ int	*ft_range(int min, int max)
 		return (NULL);
 	}
 	tab = malloc(sizeof(int) * j);
-	if (tab == NULL)
+	if (!tab)
 	{
 		return (NULL);
 	}
@@ -41,7 +41,7 @@ int	*ft_range(int min, int max)
 int main(void)
 {
 	int i = 0;
-	int min = 10;
+	int min = 0;
 	int max = 20;
 	int *resultat = ft_range(min,max);
 	while (i < max - min)

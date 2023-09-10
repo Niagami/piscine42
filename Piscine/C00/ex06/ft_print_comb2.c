@@ -6,55 +6,60 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:53:52 by jteste            #+#    #+#             */
-/*   Updated: 2023/08/25 09:02:11 by jteste           ###   ########.fr       */
+/*   Updated: 2023/09/09 09:42:28 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
-void	ft_writing(char i, char j, char k, char l)
+void	ft_putchar(char c)
 {
-	write(1, " ", 1);
-	write(1, &i, 1);
-	write(1, &j, 1);
-	write(1, " ", 1);
-	write(1, &k, 1);
-	write(1, &l, 1);
-	write(1, ",", 1);
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int i)
+{
+	int	dizaines;
+	int	unites;
+
+	if (i < 10)
+	{
+		ft_putchar('0');
+		ft_putchar(i + '0');
+	}
+	else
+	{
+		dizaines = i / 10;
+		unites = i % 10;
+		ft_putchar(dizaines + '0');
+		ft_putchar(unites + '0');
+	}
 }
 
 void	ft_print_comb2(void)
 {
-	char	i;
-	char	j;
-	char	k;
-	char	l;
+	int	i;
+	int	j;
 
-	i = '0';
-	j = '0';
-	k = '0';
-	l = '1';
-	while (i <= '9')
+	i = 0;
+	while (i <= 99)
 	{
-		while (j <= '8')
+		j = i + 1;
+		while (j <= 99)
 		{
-			while (k <= '9')
+			ft_putnbr(i);
+			ft_putchar(' ');
+			ft_putnbr(j);
+			if (i < 98)
 			{
-				while (l <= '9')
-				{
-					ft_writing(i, j, k, l);
-					l++;
-				}
-				l = '0';
-				k++;
+				ft_putchar(',');
+				ft_putchar(' ');
 			}
-			k = i;
 			j++;
-			
-		}	
+		}
 		i++;
 	}
 }
+
 int main()
 {
 	ft_print_comb2();
