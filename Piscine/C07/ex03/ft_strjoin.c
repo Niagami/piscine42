@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:23:49 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/10 10:07:17 by jteste           ###   ########.fr       */
+/*   Updated: 2023/09/11 09:30:58 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -76,7 +76,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 #include <stdio.h>
 int main()
 {
-    char *strs[] = {"Batman", "is", "real", "for", "real"};
+    char *strs[] = {"Batman", "", "real", "for", "real"};
     char *sep = "==";
     int size = 5;
 

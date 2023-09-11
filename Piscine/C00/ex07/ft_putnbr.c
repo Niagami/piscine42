@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:41:57 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/09 09:42:17 by jteste           ###   ########.fr       */
+/*   Updated: 2023/09/11 14:17:19 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -39,14 +39,13 @@ void	ft_putnbr(int nb)
 		ft_putchar(nb + '0');
 	}
 }
-/*
+
 int	main(void)
 {
 	int	nb;
 
-	nb = -72312345;
+	nb = 76768925;
 	ft_putnbr(nb);
 	ft_putchar('\n');
 	return (0);
 }
-*/

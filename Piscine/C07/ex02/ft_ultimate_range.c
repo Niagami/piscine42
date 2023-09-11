@@ -6,7 +6,7 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:54:55 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/10 11:46:39 by jteste           ###   ########.fr       */
+/*   Updated: 2023/09/11 09:40:18 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -37,7 +37,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 		return (i);
 	}
 }
-
+/*
 #include <stdio.h>
 int main()
 { 
@@ -50,4 +50,5 @@ int main()
 	printf("Taille du tableau = %d\n", size);
     return 0;
 }
+*/
  
