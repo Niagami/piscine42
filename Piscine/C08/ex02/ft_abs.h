@@ -6,13 +6,13 @@
 /*   By: jteste <jteste@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 12:21:40 by jteste            #+#    #+#             */
-/*   Updated: 2023/09/10 12:27:45 by jteste           ###   ########.fr       */
+/*   Updated: 2023/09/12 09:55:27 by jteste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_ABS_H
 
 # define FT_ABS_H
 
-# define ABS(i) ((i) < 0 ? -(i) : (i))
+# define ABS(Value) ((Value) < 0 ? -(Value) : (Value))
 
 #endif
